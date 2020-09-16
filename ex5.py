@@ -15,7 +15,7 @@ class ContaBancaria:
 class ContaCorrente(ContaBancaria):
     def pagarBoleto(self):
         boleto = int(input("Informe o valor do boleto: "))
-        self.saldo-=boleto
+        self.saldo = self.saldo-boleto
         print("Boleto pago! Saldo: {}".format(self.saldo))
         
 
@@ -23,17 +23,13 @@ class ContaPoupanca(ContaBancaria):
     taxa=0
     def resgatar(self):
         self.taxa = float(input("Qual a taxa que você deve pagar?"))
-        self.saldo-=self.taxa
-        
+        print("O resgate da classe Poupança foi feito")
         
 class ContaInvestimento(ContaBancaria):
     consultor = ""
     def resgatar(self):
         self.consultor = str(input("Qual o nome do consultor?"))
-        investimento = float(input("Qual o valor do investimento?"))
-        resgate = float(input("Qual valor voce quer resgatar do investimento?"))
-        self.saldo += resgate
-        investimento -= resgate
+        print("O resgate da classe Investimento foi feito")
         print("Seu consultor {} conseguiu resgatar seu investimento".format(self.consultor))
         
 
